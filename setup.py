@@ -1,26 +1,17 @@
-# -*- coding: utf-8 -*-
+#!/usr/bin/env python3
 
-from setuptools import setup, find_packages
-
-long_desc = '''
-This package contains the autorun Sphinx extension.
-
-.. add description here ..
-'''
-
-requires = ['Sphinx>=0.6']
+from setuptools import setup
 
 setup(
-    name='autorun',
+    name='sphinx-autorun',
     version='0.1',
-    url='http://bitbucket.org/birkenfeld/sphinx-contrib',
-    download_url='http://pypi.python.org/pypi/autorun',
+    url='https://gitlab.com/hobarrera/sphinx-autorun',
+    download_url='http://pypi.python.org/pypi/sphinx-autorun',
     license='BSD',
-    author='Vadim Gubergrits',
-    author_email='vadim.gubergrits@gmail.com',
+    author='Hugo Osvaldo Barrera',
+    author_email='hugo@barrera.io',
     description='Sphinx extension autorun',
-    long_description=long_desc,
-    zip_safe=False,
+    long_description=open('README.rst').read(),
     classifiers=[
         'Development Status :: 4 - Beta',
         'Environment :: Console',
@@ -33,8 +24,18 @@ setup(
         'Topic :: Utilities',
     ],
     platforms='any',
-    packages=find_packages(),
+    packages=[
+        'sphinx_autorun'
+    ],
     include_package_data=True,
-    install_requires=requires,
-    namespace_packages=['sphinxcontrib'],
+    install_requires=[
+        'Sphinx>=0.6',
+    ],
+    setup_requires=[
+        'setuptools_scm',
+    ],
+    use_scm_version={
+        'version_scheme': 'post-release',
+        'write_to': 'sphinx_autorun/version.py',
+    },
 )

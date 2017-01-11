@@ -1,9 +1,11 @@
-=====================
-Autorun 
-=====================
+==============
+sphinx-autorun
+==============
 
-Autorun is an extension for Sphinx_ that can execute the code from a
+sphinx-autorun is an extension for Sphinx_ that can execute the code from a
 runblock directive and attach the output of the execution to the document. 
+
+.. _Sphinx: https://sphinx.readthedocs.io/
 
 For example::
 
@@ -39,17 +41,27 @@ possible to configure autorun (from `conf.py`) to run other languages.
 
 
 Installation
------------------
+------------
 
-Installing from sources::
+Installing via pip (recommended)::
 
-    $ hg clone http://bitbucket.org/birkenfeld/sphinx-contrib/
-    $ cd sphinx-contrib/autorun
+    $ pip install sphinx-autorun
+
+Install from source::
+
+    $ git clone git@gitlab.com:hobarrera/sphinx-autorun.git
     $ python setup.py install
 
-To enable autorun add 'sphinxcontrib.autorun' to the ``extension`` list in
+To enable autorun add 'sphinx_autorun' to the ``extension`` list in
 `conf.py`::
 
-    extensions.append('sphinxcontrib.autorun')
+    extensions.append('sphinx_autorun')
 
 The documentation is in the doc/ folder.
+
+About this fork
+---------------
+
+sphinx-contrib/autorun was abandoned and broken for several months. Since it
+did not even work, this fork was created as a continuation of it with mostly
+critical fixes.
