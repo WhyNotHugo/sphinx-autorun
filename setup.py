@@ -4,7 +4,6 @@ from setuptools import setup
 
 setup(
     name='sphinx-autorun',
-    version='0.1',
     url='https://gitlab.com/hobarrera/sphinx-autorun',
     download_url='http://pypi.python.org/pypi/sphinx-autorun',
     license='BSD',
