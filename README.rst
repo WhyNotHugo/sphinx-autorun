@@ -49,7 +49,7 @@ Installing via pip (recommended)::
 
 Install from source::
 
-    $ git clone git@gitlab.com:hobarrera/sphinx-autorun.git
+    $ git clone git@github.com:hobarrera/sphinx-autorun.git
     $ python setup.py install
 
 To enable autorun add 'sphinx_autorun' to the ``extension`` list in
