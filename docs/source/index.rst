@@ -2,6 +2,7 @@
 Autorun Documentation
 =====================
 
+:maintainer: Hugo Osvaldo Barrera <hugo@barrera.io>
 :author: Vadim Gubergrits <vadim.gubergrits@gmail.com>
 
 Autorun is an extension for Sphinx that can execute the code from a
@@ -14,7 +15,7 @@ For example:
     .. runblock:: pycon
         
         >>> for i in range(5):
-        ...    print i
+        ...    print(i)
         ...
 
 Produces
@@ -22,7 +23,7 @@ Produces
 .. runblock:: pycon
         
     >>> for i in range(5):
-    ...    print i
+    ...    print(i)
     ...
 
 
@@ -47,23 +48,31 @@ possible to configure autorun (from :file:`conf.py`) to run other languages.
 Installation
 -----------------
 
+Installing via pip
+
+.. code-block:: console
+
+    $ pip install sphinx_autorun
+
 Installing from sources
 
 .. code-block:: console
 
-    $ hg clone http://bitbucket.org/birkenfeld/sphinx-contrib/
-    $ cd sphinx-contrib/autorun
+    $ git clone git@github.com:hobarrera/sphinx-autorun.git
     $ python setup.py install
 
 
 Configuration
 -----------------
 
-To enable the autorun extension add 'sphinxcontrib.autorun' to the
-``extensions`` list in :file:`conf.py`.
+To enable the autorun extension add 'sphinx_autorun' to the ``extensions`` list
+in :file:`conf.py`.
 
-.. literalinclude:: conf.py
-    :lines: 25-28
+.. code-block:: python
+
+    extensions = [
+      'sphinx_autorun',
+    ]
 
 By default autorun supports ``pycon`` and ``console``.  It's possible to
 configure autorun to run other languages. First you need to be able to pipe your
@@ -97,10 +106,9 @@ your own program to do that.
 
 Example of configuring autorun to run gnuplot scripts.
 
-.. literalinclude:: conf.py
-    :lines: 29-30
+.. code-block:: python
 
-
+    autorun_languages['gnuplot'] = 'gnuplot'
 
 .. code-block:: rst
 

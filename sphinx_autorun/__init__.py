@@ -13,6 +13,10 @@ from docutils.parsers.rst import directives
 from sphinx.errors import SphinxError
 from sphinx.util.compat import Directive
 
+from sphinx_autorun import version
+
+__version__ = version.version
+
 
 class RunBlockError(SphinxError):
     category = 'runblock error'
