@@ -9,9 +9,8 @@ import os
 from subprocess import PIPE, Popen
 
 from docutils import nodes
-from docutils.parsers.rst import directives
+from docutils.parsers.rst import Directive, directives
 from sphinx.errors import SphinxError
-from sphinx.util.compat import Directive
 
 from sphinx_autorun import version
 
