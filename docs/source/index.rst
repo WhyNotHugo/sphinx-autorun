@@ -56,7 +56,6 @@ Produces
 
 .. runblock:: pycon
         
-    >>> setup_function(args) #ignore
     >>> for i in range(5):
     ...    print(i)
     ...
