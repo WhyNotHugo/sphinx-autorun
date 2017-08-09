@@ -40,6 +40,27 @@ Produces
 .. runblock:: console
 
     $ date 
+    
+Should a user desire to omit some lines:
+
+.. code-block:: rst
+
+    .. runblock:: pycon
+        
+        >>> setup_function(args) #ignore
+        >>> for i in range(5):
+        ...    print(i)
+        ...
+
+Produces
+
+.. runblock:: pycon
+        
+    >>> setup_function(args) #ignore
+    >>> for i in range(5):
+    ...    print(i)
+    ...
+  
 
 Currently autorun supports ``pycon`` and ``console`` languages. It's also
 possible to configure autorun (from :file:`conf.py`) to run other languages.
