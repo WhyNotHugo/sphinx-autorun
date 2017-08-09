@@ -47,7 +47,7 @@ Should a user desire to omit some lines:
 
     .. runblock:: pycon
         
-        >>> setup_function(args) #ignore
+        >>> setup_function(args)  # ignore
         >>> for i in range(5):
         ...    print(i)
         ...
