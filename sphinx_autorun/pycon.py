@@ -12,7 +12,9 @@ def main():
     try:
         while True:
             source = next(source_lines)
-            print('>>>', source)
+            # Allow the user to ignore specific lines of output.
+            if '#ignore' not in source:
+                print('>>>', source)
             more = console.runsource(source)
             while more:
                 next_line = next(source_lines)
