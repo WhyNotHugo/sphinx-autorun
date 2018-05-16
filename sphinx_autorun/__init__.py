@@ -77,9 +77,9 @@ class RunBlock(Directive):
         # Get the original code with prefixes
         if show_source:
             code = u'\n'.join(self.content)
+            code_out = u'\n'.join((code, out))
         else:
-            code = ''
-        code_out = u'\n'.join((code, out))
+            code_out = out
 
         literal = nodes.literal_block(code_out, code_out)
         literal['language'] = language
