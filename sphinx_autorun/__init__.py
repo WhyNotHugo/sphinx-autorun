@@ -24,13 +24,13 @@ class RunBlockError(SphinxError):
 class AutoRun(object):
     here = os.path.abspath(__file__)
     pycon = os.path.join(os.path.dirname(here), 'pycon.py')
-    config = dict(
-        pycon='python ' + pycon,
-        pycon_prefix_chars=4,
-        pycon_show_source=False,
-        console='bash',
-        console_prefix_chars=1,
-    )
+    config = {
+        'pycon': 'python ' + pycon,
+        'pycon_prefix_chars': 4,
+        'pycon_show_source': False,
+        'console': 'bash',
+        'console_prefix_chars': 1,
+    }
 
     @classmethod
     def builder_init(cls, app):
