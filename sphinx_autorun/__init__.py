@@ -4,6 +4,27 @@ sphinxcontirb.autorun
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Run the code and insert stdout after the code block.
+
+Global options
+
+Add to your ``conf.py`` file::
+
+    autorun_languages = {}
+    autorun_languages['pycon_output_encoding'] = 'UTF-8'
+    autorun_languages['pycon_input_encoding'] = 'UTF-8'
+    autorun_languages['pycon_runfirst'] = '''
+    lines of code to run before that included in the runblock
+    this code does not appear in the output
+    use it to set up formatting, for example
+    import numpy as np
+    np.set_printoptions(precision=4, suppress=True)
+    '''
+
+Set ``pycon_input_encoding`` to UTF-8 if you use Unicode characters in the input file, since this means
+the text passed to ``autorun`` will be UTF-8 encoded
+Set ``pycon_output_encoding`` to UTF-8 if the output of the code in the runblock produces Unicode
+characters, for example ``ansitable``
+
 """
 import os
 from subprocess import PIPE, Popen
@@ -45,6 +66,7 @@ class RunBlock(Directive):
     option_spec = {
         'linenos': directives.flag,
     }
+    print("Peter's version")
 
     def run(self):
         config = AutoRun.config
@@ -59,6 +81,8 @@ class RunBlock(Directive):
         output_encoding = config.get(language+'_output_encoding', 'ascii')
         prefix_chars = config.get(language+'_prefix_chars', 0)
         show_source = config.get(language+'_show_source', True)
+        runfirst = config.get(language+'_runfirst', None)
+        runfirst = runfirst.strip().split('\n')
 
         # Build the code text
         if output_encoding == "ascii":
@@ -66,11 +90,16 @@ class RunBlock(Directive):
         else:
             bufsize = 0
         proc = Popen(args, bufsize=bufsize, stdin=PIPE, stdout=PIPE, stderr=PIPE)
-        codelines = (line[prefix_chars:] for line in self.content)
+        codelines = [line[prefix_chars:] for line in self.content]
+        if runfirst is not None:
+            codelines = runfirst + codelines
         code = u'\n'.join(codelines).encode(input_encoding)
 
+        # print('-------------------------------')
+        # print(code)
         # Run the code
         stdout, stderr = proc.communicate(code)
+        # print(stdout)
 
         # Process output
         if stdout:
@@ -78,12 +107,21 @@ class RunBlock(Directive):
         if stderr:
             out = stderr.decode(output_encoding)
 
+        nlines = len(runfirst)
+        if nlines > 0:
+            out = out.split(u'\n')
+            out = u'\n'.join(out[nlines:])
+
         # Get the original code with prefixes
+        # print(self.content)
+        # print(out)
         if show_source:
             code = u'\n'.join(self.content)
             code_out = u'\n'.join((code, out))
+            
         else:
             code_out = out
+        # print(code_out)
 
         literal = nodes.literal_block(code_out, code_out)
         literal['language'] = language
