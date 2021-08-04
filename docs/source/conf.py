@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #
 # autorun documentation build configuration file, created by
 # sphinx-quickstart on Mon Mar  1 22:27:51 2010.
@@ -24,30 +23,30 @@ from sphinx_autorun import __version__
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
 extensions = [
-  'sphinx_autorun',
+    "sphinx_autorun",
 ]
 
 autorun_languages = {}
-autorun_languages['gnuplot'] = 'gnuplot'
+autorun_languages["gnuplot"] = "gnuplot"
 
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
+templates_path = ["_templates"]
 
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
 # source_suffix = ['.rst', '.md']
-source_suffix = '.rst'
+source_suffix = ".rst"
 
 # The encoding of source files.
 #  source_encoding = 'utf-8-sig'
 
 # The master toctree document.
-master_doc = 'index'
+master_doc = "index"
 
 # General information about the project.
-project = 'sphinx_autorun'
-copyright = '2016-2017 Hugo Osvaldo Barrera; 2010, Vadim Gubergrits'
+project = "sphinx_autorun"
+copyright = "2016-2017 Hugo Osvaldo Barrera; 2010, Vadim Gubergrits"
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -73,7 +72,7 @@ language = None
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['_build']
+exclude_patterns = ["_build"]
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -91,7 +90,7 @@ exclude_patterns = ['_build']
 #  show_authors = False
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = 'sphinx'
+pygments_style = "sphinx"
 
 # A list of ignored prefixes for module index sorting.
 #  modindex_common_prefix = []
@@ -107,16 +106,16 @@ todo_include_todos = True
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'alabaster'
+html_theme = "alabaster"
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
 html_theme_options = {
-    'github_user': 'whynothugo',
-    'github_repo': 'sphinx_contrib',
-    'github_banner': 'true',
-    'github_button': 'true',
+    "github_user": "whynothugo",
+    "github_repo": "sphinx_contrib",
+    "github_banner": "true",
+    "github_button": "true",
 }
 
 # Add any paths that contain custom themes here, relative to this directory.
@@ -141,7 +140,7 @@ html_theme_options = {
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+html_static_path = ["_static"]
 
 # Add any extra paths that contain custom files (such as robots.txt or
 # .htaccess) here, relative to this directory. These files are copied
@@ -204,4 +203,4 @@ html_static_path = ['_static']
 #  html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'sphinx_autorundoc'
+htmlhelp_basename = "sphinx_autorundoc"

@@ -6,14 +6,14 @@ Autorun Documentation
 :author: Vadim Gubergrits <vadim.gubergrits@gmail.com>
 
 Autorun is an extension for Sphinx that can execute the code from a
-runblock directive and attach the output of the execution to the document. 
+runblock directive and attach the output of the execution to the document.
 
 For example:
 
 .. code-block:: rst
 
     .. runblock:: pycon
-        
+
         >>> for i in range(5):
         ...    print(i)
         ...
@@ -21,7 +21,7 @@ For example:
 Produces
 
 .. runblock:: pycon
-        
+
     >>> for i in range(5):
     ...    print(i)
     ...
@@ -39,14 +39,14 @@ Produces
 
 .. runblock:: console
 
-    $ date 
-    
+    $ date
+
 Should a user desire to omit some lines:
 
 .. code-block:: rst
 
     .. runblock:: pycon
-        
+
         >>> setup_function(args)  # ignore
         >>> for i in range(5):
         ...    print(i)
@@ -55,11 +55,11 @@ Should a user desire to omit some lines:
 Produces
 
 .. runblock:: pycon
-        
+
     >>> for i in range(5):
     ...    print(i)
     ...
-  
+
 
 Currently autorun supports ``pycon`` and ``console`` languages. It's also
 possible to configure autorun (from :file:`conf.py`) to run other languages.
@@ -104,15 +104,15 @@ your own program to do that.
 
     This is a dictionary in :file:`conf.py` that maps a language to an
     executable. For example:
-            
+
     .. code-block:: python
-        
+
         autorun_languages = {}
         autorun_languages['pycon']='python -'
-    
+
     In order to pipe python code to python executable we must use the ``-``
     argument.
-    
+
     It's also possible to specify the number of characters to remove from each
     line before sending the code. To do that map ``${language}_prefix_chars``
     to the number of characters to remove.
@@ -133,7 +133,7 @@ Example of configuring autorun to run gnuplot scripts.
 .. code-block:: rst
 
     .. runblock:: gnuplot
-        
+
         set term png
         set out 'log.png'
         plot log(x)
@@ -145,4 +145,3 @@ This will not produce any output on stdout but it will write the
 .. code-block:: rst
 
     .. image:: log.png
-

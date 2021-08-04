@@ -3,14 +3,14 @@ sphinx-autorun
 ==============
 
 sphinx-autorun is an extension for Sphinx_ that can execute the code from a
-runblock directive and attach the output of the execution to the document. 
+runblock directive and attach the output of the execution to the document.
 
 .. _Sphinx: https://sphinx.readthedocs.io/
 
 For example::
 
     .. runblock:: pycon
-        
+
         >>> for i in range(5):
         ...    print i
 
@@ -33,7 +33,7 @@ Another example::
 
 Produces::
 
-    $ date 
+    $ date
     Thu  4 Mar 2010 22:56:49 EST
 
 Currently autorun supports ``pycon`` and ``console`` languages. It's also
