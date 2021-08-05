@@ -1,24 +1,26 @@
 name: Tests
 
-on: [push]
+on:
+  push:
+    branches:
+      - "main"
+  pull_request:
+    types: [opened, synchronize, reopened]
 
 jobs:
   tests:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-18.04, macOS-latest]
+        os: [ubuntu-latest, macOS-latest]
         python: [ '3.5', '3.6', '3.7' ]
     name: python${{ matrix.python }} on ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@master
-      - uses: actions/setup-python@v1
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python }}
-          architecture: x64
-      - name: Install test dependencies
-        run: pip install tox codecov
-      - name: Run tests
-        run: tox
+      - run: pip install tox codecov
+      - run: tox
         env:
           TOXENV: py
