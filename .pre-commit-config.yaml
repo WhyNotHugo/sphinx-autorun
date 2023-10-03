@@ -9,16 +9,16 @@ repos:
       - id: check-added-large-files
       - id: debug-statements
   - repo: https://github.com/psf/black
-    rev: "23.1.0"
+    rev: "23.9.1"
     hooks:
       - id: black
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: "v1.0.0"
+    rev: "v1.5.1"
     hooks:
       - id: mypy
         additional_dependencies:
           - types-docutils
-  - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: "v0.0.246"
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: "v0.0.292"
     hooks:
       - id: ruff
