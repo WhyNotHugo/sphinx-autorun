@@ -93,3 +93,7 @@ def setup(app):
     app.add_directive("runblock", RunBlock)
     app.connect("builder-inited", AutoRun.builder_init)
     app.add_config_value("autorun_languages", AutoRun.config, "env")
+    return {
+        "version": __version__,
+        "parallel_read_safe": True,
+    }
