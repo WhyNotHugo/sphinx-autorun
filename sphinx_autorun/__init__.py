@@ -63,7 +63,7 @@ class RunBlock(Directive):
         show_source = config.get(language + "_show_source", True)
 
         # Build the code text
-        proc = Popen(args, bufsize=1, stdin=PIPE, stdout=PIPE, stderr=PIPE)
+        proc = Popen(args, stdin=PIPE, stdout=PIPE, stderr=PIPE)
         codelines = (line[prefix_chars:] for line in self.content)
         code = "\n".join(codelines).encode(input_encoding)
 
