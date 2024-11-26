@@ -5,6 +5,7 @@ sphinxcontirb.autorun
 Run the code and insert stdout after the code block.
 """
 import os
+import sys
 from subprocess import PIPE
 from subprocess import Popen
 
@@ -26,7 +27,7 @@ class AutoRun:
     here = os.path.abspath(__file__)
     pycon = os.path.join(os.path.dirname(here), "pycon.py")
     config = {
-        "pycon": "python " + pycon,
+        "pycon": sys.executable + " " + pycon,
         "pycon_prefix_chars": 4,
         "pycon_show_source": False,
         "console": "bash",
