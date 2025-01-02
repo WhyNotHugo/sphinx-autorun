@@ -4,7 +4,7 @@ from setuptools import setup
 
 setup(
     name="sphinx-autorun",
-    url="https://github.com/hobarrera/sphinx-autorun",
+    url="https://github.com/WhyNotHugo/sphinx-autorun",
     download_url="http://pypi.python.org/pypi/sphinx-autorun",
     license="BSD",
     author="Hugo Osvaldo Barrera",
