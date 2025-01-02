@@ -1,6 +1,40 @@
 [build-system]
 requires = ["setuptools>=64", "wheel", "setuptools_scm>=8"]
 
+[project]
+authors = [
+    {name = "Hugo Osvaldo Barrera", email = "hugo@whynothugo.nl"},
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Console",
+  "Environment :: Web Environment",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: BSD License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Documentation",
+  "Topic :: Utilities",
+]
+dependencies = [
+  "Sphinx>=0.6",
+]
+description = "Sphinx extension autorun"
+dynamic = ["version"]
+license = {text = "BSD-2-Clause"}
+name = "sphinx-autorun"
+readme = "README.rst"
+requires-python = ">=3.9"
+
+[project.urls]
+homepage = "https://github.com/WhyNotHugo/sphinx-autorun"
+download_url = "http://pypi.python.org/pypi/sphinx-autorun"
+
 [tool.ruff]
 select = [
     "E",
@@ -21,3 +55,10 @@ target-version = "py37"
 
 [tool.ruff.isort]
 force-single-line = true
+
+[tool.setuptools]
+packages = ["sphinx_autorun"]
+
+[tool.setuptools_scm]
+write_to = "sphinx_autorun/version.py"
+version_scheme = "no-guess-dev"

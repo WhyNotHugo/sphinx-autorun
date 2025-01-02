@@ -50,7 +50,7 @@ Installing via pip (recommended)::
 Install from source::
 
     $ git clone https://github.com/WhyNotHugo/sphinx-autorun/
-    $ python setup.py install
+    $ pip install .
 
 To enable autorun add 'sphinx_autorun' to the ``extension`` list in
 `conf.py`::

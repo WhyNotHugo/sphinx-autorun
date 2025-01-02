@@ -79,7 +79,7 @@ Installing from sources
 .. code-block:: console
 
     $ git clone https://github.com/WhyNotHugo/sphinx-autorun
-    $ python setup.py install
+    $ pip install .
 
 
 Configuration
