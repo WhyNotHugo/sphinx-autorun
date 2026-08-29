@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+- Fix ``UnboundLocalError`` when a ``runblock`` command produces no stdout or
+  stderr (for example ``cd`` or ``mkdir``).
+- Add tests for ``UnboundLocalError`` fix.
+
 ## v2.0.0
 
 - Update supported Pythons to 3.9 to 3.13.

@@ -70,7 +70,8 @@ class RunBlock(Directive):
         # Run the code
         stdout, stderr = proc.communicate(code)
 
-        # Process output
+        # Process output (prefer stderr when both are present)
+        out = ""
         if stdout:
             out = stdout.decode(output_encoding)
         if stderr:
